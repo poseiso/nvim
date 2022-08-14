@@ -30,7 +30,6 @@ local kind_icons = {
 	Value = "",
 	Enum = "",
 	Keyword = "",
-	Snippet = "",
 	Color = "",
 	File = "",
 	Reference = "",

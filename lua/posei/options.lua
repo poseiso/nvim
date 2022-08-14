@@ -18,7 +18,6 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.cmdheight = 1
 vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.conceallevel = 0
-vim.opt.mouse = "a"
 vim.opt.pumheight = 10
 vim.opt.showmode = false
 vim.opt.showtabline = 0
@@ -34,8 +33,3 @@ vim.opt.showcmd = false
 vim.opt.ruler = false
 vim.opt.signcolumn = "no"
 vim.opt.guifont = "monospace:h17"
-
-vim.opt.fillchars.eob=" "
-vim.opt.shortmess:append "c"
-vim.opt.whichwrap:append("<,>,[,],h,l")
-vim.opt.iskeyword:append("-")

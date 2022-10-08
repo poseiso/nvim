@@ -76,8 +76,8 @@ local function lsp_keymaps(bufnr)
   keymap(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   keymap(bufnr, 'n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
   keymap(bufnr, 'n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-  keymap(bufnr, "n", "gn", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
-  keymap(bufnr, "n", "gp", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
+  keymap(bufnr, "n", "gn", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+  keymap(bufnr, "n", "gp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 end
 
 M.on_attach = function(client, bufnr)

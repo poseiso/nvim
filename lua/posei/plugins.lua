@@ -19,6 +19,7 @@ return packer.startup(function(use)
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
   use 'psliwka/vim-smoothie'
+  use 'skywind3000/asyncrun.vim'
 
   -- Lang
   use 'simrat39/rust-tools.nvim'
@@ -55,4 +56,7 @@ return packer.startup(function(use)
 
   -- Treesitter
   use "nvim-treesitter/nvim-treesitter"
+
+  -- wakatime
+  use 'wakatime/vim-wakatime'
 end)

@@ -14,7 +14,9 @@ local servers = {
   "yamlls",
   "rust_analyzer",
   "gdscript",
-  "dartls"
+  "dartls",
+  "clangd",
+  "tailwindcss"
 }
 
 lsp_installer.setup()

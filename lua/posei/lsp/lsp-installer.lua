@@ -49,5 +49,18 @@ for _, server in pairs(servers) do
     opts = vim.tbl_deep_extend("force", pyright_opts, opts)
   end
 
-  lspconfig[server].setup(opts)
+  if server == "dartls" then
+    require("flutter-tools").setup{
+      widget_guides = {
+        enabled = true,
+      },
+      fvm = true, 
+      lsp = {
+        on_attach = require("posei.lsp.handlers").on_attach,
+        capabilities = require("posei.lsp.handlers").capabilities,
+      }
+    }
+  else
+    lspconfig[server].setup(opts)
+  end
 end

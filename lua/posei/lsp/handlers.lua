@@ -22,12 +22,6 @@ M.setup = function()
     vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
   end
 
-  require("flutter-tools").setup{
-    widget_guides = {
-      enabled = true,
-    },
-  }
-
   local config = {
     virtual_text = false, -- disable virtual text
     signs = {

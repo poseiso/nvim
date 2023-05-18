@@ -32,6 +32,8 @@ return packer.startup(function(use)
 
   -- Colorschemes
   use "sainnhe/everforest"
+  use "ellisonleao/gruvbox.nvim"
+
 
   -- cmp 
   use "hrsh7th/nvim-cmp"

@@ -12,6 +12,7 @@ local servers = {
   "bashls",
   "jsonls",
   "yamlls",
+  "gopls",
   "rust_analyzer",
   "gdscript",
   "dartls",

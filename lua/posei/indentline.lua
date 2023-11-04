@@ -4,5 +4,8 @@ if not status_ok then
 end
 
 indent_blankline.setup {
+  scope = {
+    enabled = false
+  }
 }
 

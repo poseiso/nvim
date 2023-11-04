@@ -23,6 +23,7 @@ return packer.startup(function(use)
 
   -- Lang
   use 'simrat39/rust-tools.nvim'
+  use 'mfussenegger/nvim-jdtls'
 
   use 'habamax/vim-godot'
   use 'clktmr/vim-gdscript3'

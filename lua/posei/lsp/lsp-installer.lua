@@ -18,7 +18,8 @@ local servers = {
   "gdscript",
   "dartls",
   "clangd",
-  "tailwindcss"
+  "tailwindcss",
+  "jdtls"
 }
 
 lsp_installer.setup()

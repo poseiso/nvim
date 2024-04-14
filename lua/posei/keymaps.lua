@@ -33,10 +33,12 @@ keymap("v", ">", ">gv", opts)
 
 -- Plugins --
 
+-- ESLINT --
+keymap("n", "<leader>fs", ":!npx eslint %")
+
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<C-b>", ":NvimTreeToggle <CR>", opts)
-keymap("i", "<C-b>", ":NvimTreeToggle <CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)

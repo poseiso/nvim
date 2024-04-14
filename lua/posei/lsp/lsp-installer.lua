@@ -38,8 +38,13 @@ for _, server in pairs(servers) do
   }
 
   if server == "rust_analyzer" then
-    local sumneko_opts = require "posei.lsp.settings.rust_analyzer"
-    opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
+    local rust_opts = require "posei.lsp.settings.rust_analyzer"
+    opts = vim.tbl_deep_extend("force", rust_opts, opts)
+  end
+
+  if server == "tsserver" then
+    local ts_opts = require "posei.lsp.settings.tsserver"
+    opts = vim.tbl_deep_extend("force", ts_opts, opts)
   end
 
   if server == "lua_ls" then

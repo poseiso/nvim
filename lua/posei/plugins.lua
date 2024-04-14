@@ -53,6 +53,7 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer"
   use "jose-elias-alvarez/null-ls.nvim"
   use "RRethy/vim-illuminate"
+  use('MunifTanjim/prettier.nvim')
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"

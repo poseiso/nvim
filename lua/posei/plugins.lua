@@ -8,12 +8,13 @@ end
 
 return packer.startup(function(use)
   use "wbthomason/packer.nvim"
+
+  -- Some sort of script extender
+  -- Used a lot by other plugins
   use "nvim-lua/plenary.nvim"
 
   -- QoL
   use "windwp/nvim-autopairs"
-  use "numToStr/Comment.nvim"
-  use "JoosepAlviste/nvim-ts-context-commentstring"
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
   use "lewis6991/impatient.nvim"
@@ -22,9 +23,6 @@ return packer.startup(function(use)
   use 'skywind3000/asyncrun.vim'
 
   -- Lang
-  use 'simrat39/rust-tools.nvim'
-  use 'mfussenegger/nvim-jdtls'
-
   use 'habamax/vim-godot'
   use 'clktmr/vim-gdscript3'
 
@@ -33,27 +31,27 @@ return packer.startup(function(use)
 
   -- Colorschemes
   use "sainnhe/everforest"
-  use "ellisonleao/gruvbox.nvim"
-
 
   -- cmp 
-  use "hrsh7th/nvim-cmp"
+  use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-buffer"
   use "hrsh7th/cmp-path"
-  use "saadparwaiz1/cmp_luasnip"
-  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-cmdline"
+  use "hrsh7th/nvim-cmp"
   use "hrsh7th/cmp-nvim-lua"
+
 
   -- snippets
   use "L3MON4D3/LuaSnip"
+  use "saadparwaiz1/cmp_luasnip"
   use "rafamadriz/friendly-snippets"
 
   -- LSP
   use "neovim/nvim-lspconfig"
   use "williamboman/nvim-lsp-installer"
-  use "jose-elias-alvarez/null-ls.nvim"
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
   use "RRethy/vim-illuminate"
-  use('MunifTanjim/prettier.nvim')
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -63,4 +61,12 @@ return packer.startup(function(use)
 
   -- wakatime
   use 'wakatime/vim-wakatime'
+
+  -- Diff
+  use "sindrets/diffview.nvim"
+
+
+  -- Dad Plugin
+  use "ThePrimeagen/harpoon"
 end)
+

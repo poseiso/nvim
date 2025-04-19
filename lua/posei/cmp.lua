@@ -16,30 +16,30 @@ local check_backspace = function()
 end
 
 local kind_icons = {
-	Text = "",
-	Method = "",
-	Function = "",
-	Constructor = "",
-	Field = "",
-	Variable = "",
-	Class = "",
-	Interface = "",
-	Module = "",
-	Property = "",
-	Unit = "",
-	Value = "",
-	Enum = "",
-	Keyword = "",
-	Color = "",
-	File = "",
-	Reference = "",
-	Folder = "",
-	EnumMember = "",
-	Constant = "",
-	Struct = "",
-	Event = "",
-	Operator = "",
-	TypeParameter = "",
+  Text = "󰉿",          -- nf-md-text
+  Method = "󰆧",        -- nf-md-function_variant
+  Function = "󰊕",      -- nf-md-function
+  Constructor = "",   -- nf-oct-tools
+  Field = "󰜢",         -- nf-md-view_column
+  Variable = "󰀫",      -- nf-md-variable
+  Class = "󰠱",         -- nf-md-school
+  Interface = "",     -- nf-fa-sitemap
+  Module = "󰏗",        -- nf-md-package_variant
+  Property = "󰜢",      -- nf-md-view_column
+  Unit = "",          -- nf-dev-dotnet
+  Value = "󰎠",         -- nf-md-tune
+  Enum = "",          -- nf-fa-list_ol
+  Keyword = "󰌋",       -- nf-md-key
+  Color = "󰸌",         -- nf-md-palette
+  File = "󰈔",          -- nf-md-file_document
+  Reference = "󰈇",     -- nf-md-file_link
+  Folder = "󰉋",        -- nf-md-folder
+  EnumMember = "",     -- nf-fa-list_ol
+  Constant = "󰏿",      -- nf-md-alpha_c
+  Struct = "󰙅",        -- nf-md-layers
+  Event = "",         -- nf-fa-bolt
+  Operator = "󰆕",      -- nf-md-code_braces
+  TypeParameter = "󰊄", -- nf-md-format_wrap_inline
 }
 
 cmp.setup({

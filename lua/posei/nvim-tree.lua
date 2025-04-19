@@ -5,14 +5,13 @@ end
     nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
       auto_reload_on_write = true,
       create_in_closed_folder = false,
-      disable_netrw = false,
+      disable_netrw = true,
       hijack_cursor = false,
       hijack_netrw = true,
       hijack_unnamed_buffer_when_opening = false,
       open_on_tab = false,
       ignore_buf_on_tab_change = {},
       sort_by = "name",
-      root_dirs = {},
       prefer_startup_root = false,
       sync_root_with_cwd = false,
       reload_on_bufenter = false,
@@ -31,14 +30,6 @@ end
         float = {
           enable = false,
           quit_on_focus_loss = true,
-          open_win_config = {
-            relative = "editor",
-            border = "rounded",
-            width = 30,
-            height = 30,
-            row = 1,
-            col = 1,
-          },
         },
       },
       renderer = {
@@ -107,10 +98,6 @@ end
         enable = false,
         update_root = false,
         ignore_list = {},
-      },
-      system_open = {
-        cmd = "",
-        args = {},
       },
       diagnostics = {
         enable = true,
@@ -181,19 +168,5 @@ end
       live_filter = {
         prefix = "[FILTER]: ",
         always_show_folders = true,
-      },
-      log = {
-        enable = false,
-        truncate = false,
-        types = {
-          all = false,
-          config = false,
-          copy_paste = false,
-          dev = false,
-          diagnostics = false,
-          git = false,
-          profile = false,
-          watcher = false,
-        },
       },
     } -- END_DEFAULT_OPTS

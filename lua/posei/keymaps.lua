@@ -31,21 +31,29 @@ keymap("v", "p", '"_dP', opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- Plugins --
-
--- ESLINT --
-keymap("n", "<leader>fs", ":!npx eslint %")
+-- Lint --
+keymap("n", "<leader>fs", ":DartFmt -l 120")
 
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<C-b>", ":NvimTreeToggle <CR>", opts)
 
 -- Telescope
-keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
-keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
-keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+local builtin = require("telescope.builtin")
+local themes = require("telescope.themes")
 
--- Comment
-keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
-keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
+keymap("n", "<leader>ff", function()
+  builtin.find_files(themes.get_ivy())
+end, opts)
+
+keymap("n", "<leader>ft", function()
+  builtin.live_grep(themes.get_ivy())
+end, opts)
+
+keymap("n", "<leader>fp", function()
+  builtin.projects(themes.get_ivy())
+end, opts)
+
+keymap("n", "<leader>fb", function()
+  builtin.buffers(themes.get_ivy())
+end, opts)

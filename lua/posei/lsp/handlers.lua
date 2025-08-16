@@ -30,7 +30,6 @@ M.setup = function()
     float = {
       focusable = true,
       style = "minimal",
-      source = "always",
       header = "",
       prefix = "",
     },
@@ -38,7 +37,6 @@ M.setup = function()
 end
 
 local function lsp_keymaps(bufnr)
-  print("✅ setting keymaps for buffer " .. bufnr)
   local opts = { noremap = true, silent = true }
   local keymap = vim.api.nvim_buf_set_keymap
   keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
@@ -60,7 +58,6 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-  print("✅ on_attach fired for " .. client.name)
   lsp_keymaps(bufnr)
   local ok, illuminate = pcall(require, "illuminate")
   if ok then illuminate.on_attach(client) end

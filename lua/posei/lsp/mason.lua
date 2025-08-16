@@ -16,11 +16,24 @@ local servers = {
   "gopls",
   "gdscript",
   "dartls",
+  "ts_ls",
+  "clangd"
+}
+
+local servers_mason = {
+  "lua_ls",
+  "bashls",
+  "jsonls",
+  "yamlls",
+  "dockerls",
+  "gopls",
+  "ts_ls",
+  "clangd"
 }
 
 mason.setup()
 mason_lspconfig.setup {
-  ensure_installed = servers,
+  ensure_installed = servers_mason,
   automatic_installation = true,
 }
 

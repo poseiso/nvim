@@ -4,8 +4,7 @@ if not status_ok then return end
 local mason_lsp_status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
 if not mason_lsp_status_ok then return end
 
-local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status_ok then return end
+-- Using vim.lsp.config instead of require("lspconfig")
 
 local servers = {
   "lua_ls",
@@ -14,26 +13,14 @@ local servers = {
   "yamlls",
   "dockerls",
   "gopls",
-  "gdscript",
-  "dartls",
   "ts_ls",
-  "clangd"
-}
-
-local servers_mason = {
-  "lua_ls",
-  "bashls",
-  "jsonls",
-  "yamlls",
-  "dockerls",
-  "gopls",
-  "ts_ls",
-  "clangd"
+  "clangd",
+  "gdscript"
 }
 
 mason.setup()
 mason_lspconfig.setup {
-  ensure_installed = servers_mason,
+  ensure_installed = servers,
   automatic_installation = true,
 }
 
@@ -54,7 +41,23 @@ for _, server in ipairs(servers) do
       fvm = true,
       lsp = opts,
     }
-  else
-    lspconfig[server].setup(opts)
+  elseif server == "jsonls" then
+    opts.settings = {
+      json = {
+        schemas = require("schemastore").json.schemas(),
+        validate = { enable = true },
+      },
+    }
+  elseif server == "yamlls" then
+    opts.settings = {
+      yaml = {
+        schemas = require("schemastore").yaml.schemas(),
+      },
+    }
   end
+
+  vim.lsp.config[server] = opts
 end
+
+-- Enable all configured LSP servers
+vim.lsp.enable(servers)

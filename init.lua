@@ -1,6 +1,6 @@
+require "posei.plugins"
 require "posei.options"
 require "posei.keymaps"
-require "posei.plugins"
 require "posei.autocommands"
 require "posei.colorscheme"
 require "posei.cmp"

@@ -1,3 +1,5 @@
+vim.g.copilot_enabled = false
+
 require "posei.plugins"
 require "posei.options"
 require "posei.keymaps"

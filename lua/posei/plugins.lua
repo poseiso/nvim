@@ -31,6 +31,7 @@ return packer.startup(function(use)
 
   -- Colorschemes
   use "sainnhe/everforest"
+  use 'navarasu/onedark.nvim'
 
   -- cmp 
   use "hrsh7th/cmp-nvim-lsp"
@@ -68,5 +69,8 @@ return packer.startup(function(use)
 
   -- Dad Plugin
   use "ThePrimeagen/harpoon"
+
+  -- Copilot
+  use "github/copilot.vim"
 end)
 

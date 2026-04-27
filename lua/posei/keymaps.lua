@@ -5,10 +5,10 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 
 -- navigation
-keymap("n", "<A-h>", "<C-w>h", opts)
-keymap("n", "<A-j>", "<C-w>j", opts)
-keymap("n", "<A-k>", "<C-w>k", opts)
-keymap("n", "<A-l>", "<C-w>l", opts)
+keymap("n", "<leader>h", "<C-w>h", opts)
+keymap("n", "<leader>j", "<C-w>j", opts)
+keymap("n", "<leader>k", "<C-w>k", opts)
+keymap("n", "<leader>l", "<C-w>l", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -31,8 +31,28 @@ keymap("v", "p", '"_dP', opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
+-- Toggle nvim-cmp completion
+keymap("n", "<leader>ct", function()
+  vim.g.cmp_on = not vim.g.cmp_on
+  vim.notify("cmp " .. (vim.g.cmp_on and "enabled" or "disabled"))
+end, opts)
+
+-- Toggle Copilot
+keymap("n", "<leader>co", function()
+  if vim.g.copilot_enabled then
+    vim.cmd("Copilot disable")
+    vim.notify("copilot disabled")
+  else
+    vim.cmd("Copilot enable")
+    vim.notify("copilot enabled")
+  end
+end, opts)
+
 -- Lint --
-keymap("n", "<leader>fs", ":DartFmt -l 120")
+keymap("n", "<leader>fs", ":!bunx biome format --write %<CR>", opts)
+keymap("n", "<leader>fg", ":!gdlint %<CR>", opts)
+keymap("n", "<leader>fh", ":!gdformat --use-spaces=2 %<CR>", opts)
+keymap("n", "<leader>fj", ":!gdradon cc %<CR>", opts)
 
 -- NvimTree
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)

@@ -6,7 +6,7 @@ if not mason_lsp_status_ok then return end
 
 -- Using vim.lsp.config instead of require("lspconfig")
 
-local servers = {
+local mason_servers = {
   "lua_ls",
   "bashls",
   "jsonls",
@@ -15,12 +15,19 @@ local servers = {
   "gopls",
   "ts_ls",
   "clangd",
-  "gdscript"
+  "ols",
 }
+
+-- Servers not managed by Mason (e.g. Godot ships its own LSP)
+local external_servers = {
+  "gdscript",
+}
+
+local servers = vim.list_extend(vim.deepcopy(mason_servers), external_servers)
 
 mason.setup()
 mason_lspconfig.setup {
-  ensure_installed = servers,
+  ensure_installed = mason_servers,
   automatic_installation = true,
 }
 

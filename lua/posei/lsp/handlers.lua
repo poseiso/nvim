@@ -16,13 +16,16 @@ M.setup = function()
     { name = "DiagnosticSignInfo",  text = "" },
   }
 
-  for _, sign in ipairs(signs) do
-    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-  end
-
   vim.diagnostic.config({
     virtual_lines = false,
-    signs = { active = signs },
+    signs = {
+      text = {
+        [vim.diagnostic.severity.ERROR] = signs[1].text,
+        [vim.diagnostic.severity.WARN]  = signs[2].text,
+        [vim.diagnostic.severity.HINT]  = signs[3].text,
+        [vim.diagnostic.severity.INFO]  = signs[4].text,
+      },
+    },
     update_in_insert = true,
     underline = true,
     severity_sort = true,
